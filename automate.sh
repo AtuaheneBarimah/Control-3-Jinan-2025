@@ -4,7 +4,7 @@ git status
 
 git add .
 
-git commit -m "Control 3 commit: $(date +%Y-%m-%d)"
+git commit -m "Control 3 (scripts) commit: $(date +%Y-%m-%d)"
 
 git push
 
