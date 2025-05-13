@@ -5,12 +5,12 @@ import scipy.signal as signal
 ref = 55
 r = ref*(np.ones(100))  # Step input
 
-car  = 10
+car  = 0.10
 reference_signal = r 
-disturbance_signal = 5
+disturbance_signal = 500
 disturbance_gain = 0.5*car
 
-gain = 10
+gain = 1000
 
 output_signal_2 = ((car*gain)/(1+ (car*gain))*reference_signal) - ((disturbance_gain*disturbance_signal)/(1+(car*gain)))
 
