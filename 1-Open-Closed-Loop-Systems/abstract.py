@@ -2,15 +2,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as signal
 
-ref = 55
-r = ref*(np.ones(100))  # Step input
+ref = 50
+#r = ref*(np.ones(100))  # Step input
+#r = np.linspace(ref, ref/ref, 100)  # Step input
+r = ref*(signal.square(2 * np.pi * 0.1 * np.arange(100)))  # Square wave input
 
-car  = 0.10
+car  = 10
 reference_signal = r 
-disturbance_signal = 500
+disturbance_signal = 50
 disturbance_gain = 0.5*car
 
-gain = 1000
+gain = 10
 
 output_signal_2 = ((car*gain)/(1+ (car*gain))*reference_signal) - ((disturbance_gain*disturbance_signal)/(1+(car*gain)))
 

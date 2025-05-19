@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import scipy.signal as signal
 
 ref = 55
-r = ref*(np.ones(100))  # Step input
+#r = ref*(np.ones(100))  # Step input
+r = np.linspace(100, 50, 100)  # Step input
 
 car  = 100
 reference_signal = r 
