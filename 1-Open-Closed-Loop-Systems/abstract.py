@@ -5,14 +5,17 @@ import scipy.signal as signal
 ref = 50
 #r = ref*(np.ones(100))  # Step input
 #r = np.linspace(ref, ref/ref, 100)  # Step input
-r = ref*(signal.square(2 * np.pi * 0.1 * np.arange(100)))  # Square wave input
+#r = ref*(signal.square(2 * np.pi * 0.1 * np.arange(100)))  # Square wave input
+#r = ref*(signal.sawtooth(2 * np.pi * 0.1 * np.arange(100)))  # Sawtooth wave input
+#r = ref*(signal.sawtooth(2 * np.pi * 0.1 * np.arange(100), 0.5))  # Triangular wave input
+r = ref*(signal.chirp(np.arange(100), 0, 10, 1))  # Chirp signal input
 
 car  = 10
-reference_signal = r 
+reference_signal = r
 disturbance_signal = 50
 disturbance_gain = 0.5*car
 
-gain = 10
+gain = 100
 
 output_signal_2 = ((car*gain)/(1+ (car*gain))*reference_signal) - ((disturbance_gain*disturbance_signal)/(1+(car*gain)))
 
