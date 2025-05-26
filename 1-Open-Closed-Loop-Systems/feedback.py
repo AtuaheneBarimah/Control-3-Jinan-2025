@@ -28,7 +28,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-error_signal = ((output_signal_2-reference_signal)/reference_signal)*100  # Percentage error
+error_signal = ((-output_signal_2+reference_signal)/reference_signal)*100  # Percentage error
 plt.figure(figsize=(7, 7))
 plt.plot(error_signal, 'r--', label='error_signal', linewidth=3)
 plt.ylabel('Error (%)')

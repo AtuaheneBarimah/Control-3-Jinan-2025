@@ -18,7 +18,7 @@ disturbance_signal = 10
 disturbance_constant = 0.5
 disturbance_gain = disturbance_constant*car
 
-gain = 100
+gain = 10
 
 output_signal_2 = ((car*gain)/(1+ (car*gain))*reference_signal) - ((disturbance_gain*disturbance_signal)/(1+(car*gain)))
 
@@ -32,7 +32,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-error_signal = ((output_signal_2-reference_signal)/reference_signal)*100  # Percentage error
+error_signal = ((-output_signal_2+reference_signal)/reference_signal)*100  # Percentage error
 plt.figure(figsize=(7, 7))
 plt.plot(error_signal, 'r--', label='error_signal', linewidth=3)
 plt.ylabel('Error (%)')
