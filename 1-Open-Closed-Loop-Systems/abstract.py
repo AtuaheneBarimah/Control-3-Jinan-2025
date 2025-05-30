@@ -18,7 +18,7 @@ disturbance_signal = 10
 disturbance_constant = 0.5
 disturbance_gain = disturbance_constant*car
 
-gain = 0.1
+gain = 10
 
 output_signal_2 = ((car*gain)/(1+ (car*gain))*reference_signal) - ((disturbance_gain*disturbance_signal)/(1+(car*gain)))
 
