@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Parameters
-m = 5.0       # Mass (kg)
+m = 1.0       # Mass (kg)
 c = 1.0       # Damping coefficient (N·s/m)
 k = 10.0      # Spring stiffness (N/m)
 
