@@ -5,8 +5,8 @@ from scipy.optimize import curve_fit
 
 # System parameters
 m = 10.0       # Mass (kg)
-c = 0.50       # Damping coefficient (N·s/m)
-k = 1.0      # Spring stiffness (N/m)
+c = 0.5       # Damping coefficient (N·s/m)
+k = 1      # Spring stiffness (N/m)
 
 #Simulation time
 Time = 50  # Total simulation time in seconds

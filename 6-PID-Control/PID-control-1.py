@@ -5,8 +5,8 @@ from scipy.signal import find_peaks
 
 # System parameters
 m = 1.0       # Mass (kg)
-c = 1.0       # Damping coefficient (N·s/m)
-k = 10.0      # Spring stiffness (N/m)
+c = 0.5       # Damping coefficient (N·s/m)
+k = 1.0      # Spring stiffness (N/m)
 
 # Simulation parameters
 sim_time = 50  # Total simulation time in seconds
