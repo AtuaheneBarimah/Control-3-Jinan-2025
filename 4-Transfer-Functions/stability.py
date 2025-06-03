@@ -7,7 +7,7 @@ s = control.TransferFunction.s
 
 K = 1000
 
-G = (K*2*s+1)/((3*s**2)-s-2)
+G = 64/((s**2)+8*s+64)
 print ('H(s) =', G)
 
 
