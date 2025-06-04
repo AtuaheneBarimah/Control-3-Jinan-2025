@@ -10,7 +10,7 @@ k = 1.0      # Spring stiffness (N/m)
 
 # Simulation parameters
 sim_time = 50  # Total simulation time in seconds
-time_vector = np.linspace(0, sim_time, 5000)  # Increased resolution
+time_vector = np.linspace(0, sim_time, 5000) 
 
 # Create the transfer function
 s = control.TransferFunction.s
@@ -79,7 +79,6 @@ try:
     print(f"Kp = {Kp:.4f}")
     print(f"Ti = {Ti:.4f} sec")
     print(f"Td = {Td:.4f} sec")
-    #print(f"Derivative filter coefficient N = {N}")
     
     # Create closed-loop system
     closed_loop_pid = control.feedback(pid * sys, 1)
