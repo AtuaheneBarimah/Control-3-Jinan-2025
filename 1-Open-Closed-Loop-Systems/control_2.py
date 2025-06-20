@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as signal
 
-ref = 55
+ref = 1
 #r = ref*(np.ones(100))  # Step input
 #r = np.linspace(ref, ref/ref, 100)  # Step input (Decreasing)
 r = np.linspace(ref/ref, ref, 100)  # Step input (Increasing)
@@ -13,13 +13,13 @@ r = np.linspace(ref/ref, ref, 100)  # Step input (Increasing)
 #r = (ref*np.sin(1 * np.pi * 0.1 * np.arange(100)) + 1)  # Sine wave input
 
 
-car  = 10
+car  = 1
 reference_signal = r 
-disturbance_constant = 0.5
-disturbance_signal = 10
+disturbance_constant = 0
+disturbance_signal = 0
 disturbance = disturbance_constant*disturbance_signal
 
-control_signal = 10
+control_signal = 1
 output_signal = car*((reference_signal*control_signal)-(disturbance))
 
 plt.figure(figsize=(7, 7))

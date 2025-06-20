@@ -8,14 +8,17 @@ m = 1.0       # Mass (kg)
 c = 0.5       # Damping coefficient (N·s/m)
 k = 1.0      # Spring stiffness (N/m)
 
-# Simulation parameters
-sim_time = 50  # Total simulation time in seconds
-time_vector = np.linspace(0, sim_time, 5000) 
-
 # Create the transfer function
 s = control.TransferFunction.s
 sys = (k + c*s)/(m*s**2 + c*s + k)
 print("Transfer Function =", sys)
+
+# Simulation parameters
+sim_time = 10  # Total simulation time in seconds
+time_vector = np.linspace(0, sim_time, 5000) 
+
+#Disturbance
+Disturbance = s/100
 
 # Improved closed-loop identification with better oscillation detection
 def ziegler_nichols_cl_identification(sys, time_vector, max_Kp=1000):
@@ -47,7 +50,7 @@ def ziegler_nichols_cl_identification(sys, time_vector, max_Kp=1000):
                 Tu = np.mean(periods)
                 return Ku, Tu
         
-        Kp += 0.5 if Kp < 10 else 5  # Adaptive gain increment
+        Kp += 0.5 if Kp < 10 else 5 
     
     # If no perfect oscillation found, use the best candidate
     if best_oscillation[2] >= 3:
@@ -81,7 +84,7 @@ try:
     print(f"Td = {Td:.4f} sec")
     
     # Create closed-loop system
-    closed_loop_pid = control.feedback(pid * sys, 1)
+    closed_loop_pid = control.feedback((pid-Disturbance) * sys, 1)
     
     # System analysis
     print("\nSystem Analysis:")

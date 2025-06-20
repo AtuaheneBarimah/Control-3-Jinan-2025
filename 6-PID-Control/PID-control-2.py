@@ -8,15 +8,15 @@ m = 10.0       # Mass (kg)
 c = 0.5       # Damping coefficient (N·s/m)
 k = 1      # Spring stiffness (N/m)
 
-#Simulation time
-Time = 50  # Total simulation time in seconds
-# Time vector
-Time = np.linspace(0, Time, 1000)
-
 # Create the transfer function
 s = control.TransferFunction.s
 sys = (k + c*s)/(m*s**2 + c*s + k)
 print("Transfer Function =", sys)
+
+#Simulation time
+Time = 50  # Total simulation time in seconds
+# Time vector
+Time = np.linspace(0, Time, 1000)
 
 # Step 1: Obtain the open-loop step response
 t = Time  # Simulation time
